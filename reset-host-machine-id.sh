@@ -45,7 +45,7 @@ fi
 
 if [ -f "${TRIGGER_FILE}" ]; then
 	rm -rf "${TRIGGER_FILE}"
-	rm -rf /etc/ssh/ssh_host_* /etc/sysconfig/rhn/systemid /etc/machine-id /var/lib/dbus/machine-id 2> /dev/null
+	rm -rf /etc/ssh/ssh_host_* /etc/sysconfig/rhn/systemid /etc/machine-id /var/lib/dbus/machine-id /etc/venv-salt-minion/pki/minion/* /etc/venv-salt-minion/minion_id 2> /dev/null
 	dbus-uuidgen --ensure
 	systemd-machine-id-setup
 	systemctl disable reset-host-machine-id.service
